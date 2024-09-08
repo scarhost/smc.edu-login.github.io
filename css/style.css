@@ -1,0 +1,484 @@
+/*	Fonts	*/
+@font-face{
+		font-family: 'Bio Sans';
+		font-style: normal;
+		src: url('../fonts/Flat-it%20-%20BioSans-Regular.otf') format("opentype"),
+			 url('../fonts/flat-it_-_biosans-regular-webfont.woff') format("woff");
+		/* src: url('../fonts/Flat-it%20-%20BioSans-Regular.otf') format("opentype"); */
+}
+
+@font-face{
+		font-family: 'Bio Sans';
+		src: url('../fonts/Flat-it%20-%20Bio%20Sans%20Italic.otf') format("opentype"),
+			 url('../fonts/flat-it_-_bio_sans_italic-webfont.woff') format("woff");
+		/* src: url('../fonts/Flat-it%20-%20Bio%20Sans%20Italic.otf') format("opentype"); */
+		font-style: italic;
+}
+
+@font-face{
+		font-family: 'Bio Sans';
+		src: url('../fonts/Flat-it%20-%20Bio%20Sans%20Bold.otf') format("opentype"),
+			 url('../fonts/flat-it_-_bio_sans_bold-webfont.woff') format("woff");
+		/* src: url('../fonts/Flat-it%20-%20Bio%20Sans%20Bold.otf') format("opentype"); */
+		font-weight: bold;
+}
+
+@font-face{
+		font-family: 'Bio Sans';
+		src: url('../fonts/Flat-it%20-%20Bio%20Sans%20Bold%20Italic.otf') format("opentype"),
+			 url('../fonts/flat-it_-_bio_sans_bold_italic-webfont.woff') format("woff");
+		/* src: url('../fonts/Flat-it%20-%20Bio%20Sans%20Bold%20Italic.otf') format("opentype"); */
+		font-weight: bold;
+		font-style: italic;
+}
+
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+html, body {
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	/*font-family: Verdana,Arial,sans-serif;*/ /* 2018-06-26: BS' default font looks better! */
+	font-size: 1em;
+	color: #fff;
+}
+
+/*		Login Page Logo		*/
+img#LogoImg { 
+	display: none;	/* 2020-12-17: Removed by Gregg per team request */
+	height: 60px; 
+	float: left; 
+	margin-left: 2.5vw; 
+	padding: 5px 10px 5px 10px; 
+	border-radius: 0px 0px 10px 10px; 
+	-webkit-box-shadow: 0 2px 22px rgba(182,190,199,.8); 
+	box-shadow: 0 2px 22px rgba(182,190,199,.8); 
+	background-color: #ed2127
+}
+.branded-logo{margin-left: 2.5vw; flex: 2 2 auto;}
+#BrandedLogo{max-height: 50px; margin-top: 7px;}
+#lblMainFormTitle{padding-left:10px; display: inline-block;}
+.logo-container{
+	/*position: absolute;*/
+	align-self: flex-start;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*height: 50px;*/
+    background-color: #fff;
+    z-index: 1;
+	-webkit-box-shadow: 0 2px 22px rgba(182,190,199,.8);
+    box-shadow: 0 2px 22px rgba(182,190,199,.8);
+	z-index: 100;
+}
+.branded-footer{text-align: center; width:100vw; align-self: flex-end!important;}
+
+/* 2017-02-15 - Overriding Bootstrap which uses pixels and too much margin... */
+h1,h2,h3 { color: #fff; margin: 10px 0px; }
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; font-weight: 700; }
+a { color: white; text-decoration: underline; }
+a:focus, a:hover { color: white; }
+select { color: #000; } 
+select[multiple] { border-radius: 0px !important; }
+legend { margin-bottom: 0px; font-size: 1em; color: #fff; font-weight: 700; border: 0; }
+.form-control {
+	font-size: 1em;/* BS makes it 14px */
+	color: #000;/* BS makes it gray */
+}
+
+input[type=checkbox] { margin-left: 10px; }
+
+.popupInstructions { margin-bottom: 20px; }
+.logonbox { background-color: transparent; } /* 2017-02-16 - BG color of main logon form */
+#frmLogin { width: 100%; }	/* 2017-02-21 - The built-in .NET login control table */
+.containerPGButton { margin-bottom: 15px; }	/* 2017-02-15 - So buttons have some vertical WS above and below. FYI: needs 'buffer' rows to prevent margin collapsing... */
+.PGButton {
+	background-color: transparent;
+	color:#fff;
+	width:100%;
+	font-size: 1em;
+	margin-top: 10px;	/* 2017-02-15 - BS has no margin so these overlap on small screens */
+	padding: 10px 25px;
+	font-weight: 700;
+	border-radius: 22.5px;
+	line-height: 22px;
+	box-sizing: border-box;
+    border: 2px solid #fff;
+	transition: all 0.2s ease;
+}
+/* 2017-02-15 - These are also overriding what BS does */
+.PGButton:hover, .PGButton:focus {
+	color:#fff;
+    border: 2px solid #fff;
+    background-color: #17C671;
+    box-shadow: 0 10px 30px 0 rgba(165,160,160,0.32);
+}
+.btn:focus { color: #fff; outline: 0; }
+.PGButtonDisabled { width:100%; font-size: 1em; margin-top: 10px; background-color: transparent; color:#fff; padding: 10px 25px; font-weight: 700; border-radius: 22.5px; line-height: 22px; box-sizing: border-box; border: 2px solid #fff; }
+.PGButtonDisabled:hover { color:#fff; }
+
+.PGAltButton { background-color:#ff8000; }
+.PGAltButton:hover { background-color: #ff9933; color: #fff; }
+
+/* 2017-02-21 - For the "answers remaining" counter */
+.CAStatic { font-weight: bold; }
+.CARunning { color: red;	font-weight: bold; font-size: 1.125em; }
+
+/* Separate classes for vertical vs. horizontal centering */
+.vcenter { position: absolute; top: 50%; -ms-transform: translate( 0%, -50%); -webkit-transform: translate(0%,-50%); transform: translate(0%,-50%); }
+.hcenter { position: absolute; left:0; right:0; margin-left: auto; margin-right: auto; }
+
+/* Language selector */
+.clsLangSelector { /*float:right;*/ }	/* 2017-02-21 - Only should be floated on login form, doing that inline now */
+#lblLangSel { font-weight: inherit; text-transform: initial; }
+#listLangSel { width: inherit; display: inline-block; margin-bottom: 10px; } /* So the controls all appear on a single line */
+#btnChangeLang { color: #000; margin-left: 10px; font-size: 0.875em; }
+/* Classes for different label types */
+label { color: #fff; }
+.lblCheck { font-weight: inherit; cursor: pointer; }
+.lblRadio { font-weight: inherit; cursor: pointer; margin-left: 10px; }
+.lblRadioDisabled { font-weight: inherit; color: #AAA; cursor: not-allowed; margin-left: 10px; }
+.lblSpan { display: inline-block; max-width: 100%; margin-bottom: 5px; font-weight: 700; }
+.pgInputBtn { font-size: 0.875em; color: #000; }
+
+.resendLink { margin-left: 10px; }	/* For OTP resending */
+.qrstyle { text-align: center; background-color:white; border:0px; } /* QR code for mobile app */
+#preload span{ visibility: hidden; }
+.saveUAInstr { font-size: 0.6875em; border: 1px solid black; padding: 5px; background-color: #fff; }
+.SStooltip { position: absolute; font-size: 0.875em; width: 280px; border: 2px solid black; padding: 5px; background-color: #fff; z-index: 10003; }
+
+/* General purpose */
+.bold { font-weight: 700; }
+.italic { font-style: italic; }
+.boldred { color: red; font-weight: 700; }
+.boldgreen { color: darkgreen; font-weight: 700; }
+.maroonbg { background-color: maroon; }
+.confDsp { font-style: italic; color: red; font-weight: 700; padding-left: 20px; }
+.chal_q { font-weight: 700; font-style: italic; }	/* Challenge questions when drop-downs aren't used */
+.italicsEmphasis { font-style: italic; font-weight: 700; }
+.pgh3 { font-size: 1.25em; font-weight: 700; }
+.pgh4 { font-size: 1.125em; }
+.bgwhite { background-color: white; }
+.pwruleok { font-weight: 700; font-style: italic; color: green; }
+.pwruleok-img::after { content: url(../images/green-check-12.png); margin-left: 8px; }
+.pwrulebad { font-weight: 700; font-style: italic; 	color: red; }
+.pwrulebad-img::after { content: url(../images/red-X-12.png); margin-left: 8px; }
+.activityLabel { font-weight: 700; }
+.activityData { font-style: italic; }
+.mo-img-activate { opacity: 0.7; filter: alpha(opacity=70); }
+.mo-img-activate:hover { opacity: 1.0; filter: alpha(opacity=100); }
+
+/* Errors, warnings and confirmations */
+.successdiv { background: #9fc; border: 2px solid #690; padding: 10px; margin: 15px 0; color: #000; border-radius: 5px; }
+.warningdiv { background: #cfc; border: 2px solid #0f0; padding: 10px; margin: 15px 0; color: #000; border-radius: 5px; }
+.errordiv  { background: #fc9; border: 2px solid #f00; padding: 10px; margin: 15px 0; color: #000; border-radius: 5px; }
+.errorfield { background: #fc9; border: 2px solid #f00; }
+/* White links in these divs look bad */
+.successdiv>a, .warningdiv>a, .errordiv>a { color:#337ab7; }
+
+
+/* From: https://www.w3.org/WAI/tutorials/forms/labels/ */
+.visuallyhidden {
+	padding: 0; border: 0; clip: rect(0 0 0 0);
+	height: 1px; width: 1px; margin: -1px;
+	overflow: hidden; position: absolute;
+}
+
+/* Acct Mgmt */
+.flexWrapper{display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; flex: 0 0 100%;}
+.col-md-6.col-md-offset-3, .col-md-8.col-md-offset-2, .displaybox { }	/* bg color of Acct Mgmt */
+#maintitle { display: inline-block; margin-bottom: 10px; }
+#popup_GetPW { z-index:1001; position: absolute; background-color: white; margin-top:50px; padding: 20px 20px 0 20px; }
+.logonName { float: right; font-size: 0.875em; padding-top: 10px; text-align: right; }
+.panel { background-color: transparent; }
+.panel-title { font-size: inherit; }
+.panel-body { padding: 0 15px 10px 15px; }
+
+/* 2018-06-28 - Opacity as used below doesn't work in IE11 or Edge so have specific rules for them */
+.panel-default>.panel-heading { background-color: rgb(238, 238, 238, 0.1); }
+	/* For IE11 */
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { .panel-default>.panel-heading { background-color: #000; } }
+	/* For MS Edge */
+	@supports (-ms-ime-align:auto) { .panel-default>.panel-heading { background-color: #000; } }
+
+.panel-title>a { color: #fff; font-weight: 700; }
+.well { padding: 10px; margin-top: 10px; background-color: transparent; }
+.acctLogo { max-height:75px; margin-right:15px; content:url(../images/shield.png); }
+.hr_light { background-color: #eee; border: 0 none; color: #eee; height: 1px; margin: 5px; }
+.mobileapp_secret { padding: 10px; text-align: center; color: red; font-weight: 700; }
+.AMtable th { vertical-align: middle; text-align: center; border: 1px solid #000; padding: 3px; }
+.AMtable td { vertical-align: middle; text-align: left; border: 1px solid #000; padding: 5px; }
+body.printOTPs { background-image: none; background-color: white; color: black; margin: 10px; }
+/* 2018-12-07 - Print OTP changes */
+a.printlink { color: blue; }
+a.printlink:focus, a.printlink:hover { color: blue; }
+/* This entire '@media print' block is to print OTPs in a business card size. */
+/* Comment out the entire block for normal, full-page printing */
+@media print {
+	@page { margin-top: 0; margin-bottom: 0; }
+	.noprint { display:none; }
+	.printotpflex { font-size: 18px; } /* Set a smaller size here if printed codes are wrapping */
+	body.printOTPs {
+		width: 1.8in;
+		height: 3.3in;
+		margin-top: 72px;
+		margin-left: 0px;
+		padding-top: 0px;
+        padding-bottom: 0px ;
+		border: 1px dashed #000;
+		overflow: hidden;
+	}
+	h1 { font-size: 16px; text-align: center; }
+	#printOTPs { margin-top: -12px; }
+	p {
+		margin-top: -12px;		
+		margin-right: 10px;
+		font-size: 12px;
+		padding-left: 10px;
+	}
+	ol { font-size: 18px; }
+}
+img.acctActivity		{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat 0 0; vertical-align: middle; margin-right: 10px; }
+img.acctCPanel			{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -49px 0; vertical-align: middle; margin-right: 10px; }
+img.acctEmail			{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -98px 0; vertical-align: middle; margin-right: 10px; }
+img.acctMobileApp		{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -147px 0; vertical-align: middle; margin-right: 10px; }
+img.acctPhoneLandLine	{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -196px 0; vertical-align: middle; margin-right: 10px; }
+img.acctPhoneMobile		{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -245px 0; vertical-align: middle; margin-right: 10px; }
+img.acctPrinter			{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -294px 0; vertical-align: middle; margin-right: 10px; }
+img.acctQuestion		{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -343px 0; vertical-align: middle; margin-right: 10px; }
+img.acctServer			{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -392px 0; vertical-align: middle; margin-right: 10px; }
+img.acctUA				{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -441px 0; vertical-align: middle; margin-right: 10px; }
+img.acctYubiKey			{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -490px 0; vertical-align: middle; margin-right: 10px; }
+img.acctHOTPToken		{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -539px 0; vertical-align: middle; margin-right: 10px; }
+img.acctSecurityKey		{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -588px 0; vertical-align: middle; margin-right: 10px; }
+img.acctVoiceBio		{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -637px 0; vertical-align: middle; margin-right: 10px; }
+img.acctDuoSecurity		{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -686px 0; vertical-align: middle; margin-right: 10px; }
+img.acctFingerprint		{ width: 48px; height: 48px; background:url(../images/acct-icons.png) no-repeat -735px 0; vertical-align: middle; margin-right: 10px; }
+img.acctAuthy			{ width: 48px; height: auto; background:url(../images/authy.png); background-size: 100% auto; vertical-align: middle; margin-right: 10px; }
+
+
+/* Account Link results */
+.linkres_table { border-collapse: collapse; width: 100%; }
+.linkres_table th { text-align: center; font-style: italic; border: 1px solid #000; padding: 3px; }
+.linkres_table td { border: 1px solid #000; padding: 5px; }
+.align_left { text-align: left; }
+.align_center { text-align: center; }
+.align_right { text-align: right; }
+
+/* Pop-up dialogs and main containers */
+.dlghdr, .col-md-6.col-md-offset-3.dlghdr {	/* dialog heading */
+	background-color: #007558;
+	color: #fff;
+	text-transform: uppercase;
+	-webkit-border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px; -moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px; border-top-right-radius: 5px;
+}
+.displaybox { margin-top: 20px; top:0px; }	/* Separation at top of AcctMgmt, DB, HD */
+.shadow {
+	-webkit-box-shadow: 0px 0px 5px 4px rgba(133,133,133.5);
+	-moz-box-shadow: 0px 0px 5px 4px rgba(133,133,133.5);
+	box-shadow: 0px 0px 5px 4px rgba(133,133,133,0.5);
+}
+/*.border-radius { -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }*/	/* Rounded dialog corners */
+.col-md-6.col-md-offset-3, .col-md-8.col-md-offset-2 { border-radius: 5px; }	/* So dialog hdrs don't show white upper corners */
+.popupWin { z-index: 10000; border-radius:3px; }
+.translucent { /* 2018-06-27: Still used on AcctMgmt */
+	position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000;
+	outline: 9999px solid rgba(0,0,0,.9); background-color: rgba(0,0,0,.9);
+	/*-webkit-transform: translateZ(1px);*/ /* 2017-04-18 - Caused dimmed dialogs on Safari */
+}
+.otpresendPopup { position: absolute; text-align: left; z-index: 10002; border: 2px solid black; padding: 20px; background-color: black; font-size: 1.125em; }
+.popup_Scoring { z-index: 20000; background-color: 88bbdd; width: 60%; padding: 15px; }
+
+
+/* For Captcha v1 */
+.recaptcha_r7_c1,.recaptcha_r8_c1{ display:none; }
+#recaptcha_privacy{ display:none; }
+
+/* Selfreg */
+.register h2, .register h3 { color: #000; }	/* h1 NOT included since it appears in the dlg title which has a dark bg */
+#recaptcha_response_field { border-radius:0px; height: 24px; }
+
+/* SSO */
+.sizeSelector { float: right; }
+.errrespid { font-style: italic; font-weight: 700; color: red; }
+
+.rpdellink { position: absolute; bottom: 5px; right: 0; }
+.lglink { font-size: 0.875em; font-weight: 700; }
+.uaDPUImage { margin-left: 20px; border: solid 3px #000; }
+/* 2018-06-28 - Opacity as used below doesn't work in IE11 or Edge so have specific rules for them */
+.nav>li>a:hover { background-color: rgb(238, 238, 238, 0.1); }
+	/* For IE11 */
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { .nav>li>a:hover { background-color: #000; } }
+	/* For MS Edge */
+	@supports (-ms-ime-align:auto) { .nav>li>a:hover { background-color: #000; } }
+
+
+/* Help Desk */
+.biglink { text-align: center; display: block; width: 50%; background: #AAA; border: 2px solid #DDD; padding: 5px; margin: 10px; color: white; cursor: pointer; font-weight: 700; font: 1.5em; }
+.biglink:hover { text-decoration: underline; color: black; }
+.instructions { font: 0.875em; font-weight: 700; margin-bottom: 15px; }
+.sm_instructions { font-size: 0.875em; font-style: italic; color: #f60; margin-left: 5px; }
+.toconfirm { font-weight: bold; font: 0.875em; }
+.userList { overflow: auto; height: 120px; width: 100%; background-color: #E0ECFF; text-align: left; color: #00F; padding: 2px; font: 0.75em; border: 1px solid #000000; }
+.confirmtext { color: red; font: 0.75em; font-weight: 700; font-style: italic; }
+.reqErrorDetail { color: red; font-style: italic; }
+
+img.iconUnlock			{ width: 21px; height: 21px; background:url(../images/HD-icons.png) no-repeat 0 0; vertical-align: middle; margin-right: 10px; }
+img.iconResetPW			{ width: 21px; height: 21px; background:url(../images/HD-icons.png) no-repeat -22px 0; vertical-align: middle; margin-right: 10px; }
+img.iconExpirePW		{ width: 21px; height: 21px; background:url(../images/HD-icons.png) no-repeat -44px 0; vertical-align: middle; margin-right: 10px; }
+img.iconCreateOTP		{ width: 21px; height: 21px; background:url(../images/HD-icons.png) no-repeat -66px 0; vertical-align: middle; margin-right: 10px; }
+img.iconClearFld		{ width: 21px; height: 21px; background:url(../images/HD-icons.png) no-repeat -88px 0; vertical-align: middle; margin-right: 10px; }
+img.iconResetAllFlds	{ width: 21px; height: 21px; background:url(../images/HD-icons.png) no-repeat -110px 0; vertical-align: middle; margin-right: 10px; }
+img.iconEnrollHOTP		{ width: 21px; height: 21px; background:url(../images/HD-icons.png) no-repeat -132px 0; vertical-align: middle; margin-right: 10px; }
+
+/* Username Type-ahead */
+.suggest_link { background-color: #E0ECFF; cursor: auto; padding: 2px 6px 2px 6px; font-size: 0.875em; }
+.suggest_link_over { background-color: #C3D5EE; cursor: pointer; padding: 2px 6px 2px 6px; font-size: 0.875em; }
+#divSearch, #divReportResults, #divLookupResults { position: absolute; background-color: #E0ECFF; text-align: left; color: #00F; padding: 2px; border: 1px solid #000000; z-index: 10000; }
+.reqUser { font-weight: 700; color: blue; }
+
+/* Dashboard - Reporting */
+#PleaseWait , #NoUserSelected, #ReportInstructions { text-align: center; color: red; padding: 20px 0; }
+.dbreport { width: 100%; border-collapse: collapse; border: 1px solid black; margin-bottom: 15px; }
+.dbreport th { text-align: center; border-collapse: collapse; padding: 2px 2px; border: 1px solid black; background-color: #84271c; font-size: 0.875em; color: white; cursor: pointer; vertical-align: middle; text-decoration: none; }
+.dbreport td { border-collapse: collapse; padding: 2px 15px 2px 15px; border: 0px solid black; font-size: 0.875em; }
+.leftcell { text-align: left; }
+.midcell { text-align: center; }
+.rightcell { text-align: right; }
+.highlight { background-color: rgb(238, 238, 238, 0.1); }
+.colhdr { vertical-align: middle; display: inline-block; padding: 0 15px 0 0; }
+.sorttext { font-size: 0.5625em; }
+.totalrows { background-color: transparent; font-weight: 700; font-style: italic; padding: 0 0 5px 10px; }
+/* Dashboard - User Detail */
+.sectionHeader { font-size: 1.25em; font-weight: 700; color: #fff; text-decoration: underline; }
+
+#preload{display: none!important;}
+/*	Flex Definitions	*/
+.mainFlex{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+	padding-top:10px;
+	padding-bottom: 20px;
+}
+.bodyFlex{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+.acctFlex,#footer-copyright{
+	display: flex;
+    /*flex-wrap: wrap;*/
+    justify-content: center;
+}
+.ssFlex{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#SSActionChosen{display: flex; margin-left: 0px!important;margin-right: 0px!important;}
+
+/*	For Accordion Style	*/
+.panel-heading .panel-title .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Font Awesome 5 Free';
+    content: "\f054";
+    float: right;        /* adjust as needed */
+    color: grey;         /* adjust as needed */
+}
+.panel-heading .panel-title .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f078";
+}
+.pgHidden{display: none;}
+
+.logonbox.changePW { max-width: inherit !important; }
+
+.logonName{float: right;}
+
+#hidden{display: none;}
+
+/*	Size Selector	*/
+#changeSizeToggle{display: inline-grid; grid-template-columns: 50px auto;}
+.sizeSelector{font-size: .8em;}
+.secondaryWrapper{width: 400px; margin-top: 50px;}	/* 2021-02-04: This width is also on logonbox */
+#editToggleWrapper{display: none;}
+#btnAddGroup{display: none;}
+
+/*	New SSO RP Classes*/
+.pgRP, .rpdiv{
+	width: 200px;
+    height: 160px;
+    background-color: #fff;
+    border-radius: 14px;
+    border: 2px solid red;
+	margin: 15px;
+}
+.pgRPLink, .rplink{
+	text-decoration: none;
+    color: #000;
+    font-weight: 700;
+	height: 100%;
+	width: 100%;
+	display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+	overflow: hidden;
+}
+.pgRPLink:hover, .rplink:hover{
+	color: #000;
+}
+.pgRPImg, .rpimage{
+	width: 100px;
+    height: 100px;
+    margin: auto;
+    /* margin-top: 20px; */
+	flex: 3 1 100%;
+    order: 1;
+	object-fit: contain;
+}
+.pgRPLinkText, .rpname{
+	width: 100%;
+    margin: auto;
+    text-align: center;
+	flex: 2 1 0%;
+    order: 2;
+}
+/*	Address issues with rounded boxes and scrollbars	*/
+
+#selUsers, #TOU{border-radius: 2px;}
+/*	keeps main title in proper placement on screens other than sso	*/
+#maintitle{flex: 0 0 100%; margin-left: 5vw;}
+/*Responsive Media queries*/
+@media screen and (max-width:768px){
+	.sizeSelector { display: none; }
+	/* 2017-05-26 - Fixes for mobile appearance */
+	h1 { font-size: 1.5em; }
+	h2 { font-size: 1.2em; }
+	h3 { font-size: 1.0em; font-weight: 700; }
+}
+	
+@media screen and (max-width:992px){
+	.displaybox { padding-bottom: 5px; }
+}
+
+@media screen and (min-width:768px) and (max-width:992px){
+
+}
+
+.AUPcontainer {
+	margin-bottom:20px;
+	max-height:300px;
+	overflow-y:auto;
+}
+/* 2021-03-30 - So mobile enrollment QR codes aren't enormous */
+#bkmqrcode { max-width: 400px; }

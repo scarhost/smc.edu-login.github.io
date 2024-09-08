@@ -1,0 +1,237 @@
+html { 
+	margin-left: calc(100vw - 100%); 
+	box-sizing: border-box;  /* SMC added */
+}
+/*		Main Body Text		*/
+html, body {
+	font-family: 'Bio Sans'!important; 
+	color: #000; 
+	background-color: #000; 
+	/* SMC background changed from '/_layouts/images/PG/images/gradient.svg' */
+	/* SMC background changed from '/_layouts/images/PG/images/SMC11CampusQuado50.jpg' */
+
+	background: url('../images/sm-beach.jpg') no-repeat center center fixed;
+	/*background: url('/_layouts/images/PG/images/SMC-Marketing-12.jpg') no-repeat center center fixed; */
+    /*background: url('/_layouts/images/PG/images/SMC11CampusQuado50.jpg') no-repeat center center fixed; */
+	background-size: cover;
+}
+
+
+/*		Box Shadows		*/
+.shadow{
+	-webkit-box-shadow: 0px 0px 5px 4px rgba(133,133,133.5);
+	-moz-box-shadow: 0px 0px 5px 4px rgba(133,133,133.5);
+	box-shadow: 0px 0px 5px 4px rgba(133,133,133,0.5);
+}
+
+/*		For Solid/Semi-transparent Backgrounds on HD, Dashboard, SSO, and Acct Mgmt Pages		*/
+.opaque, .hdOpaque{
+	background-color: #fff; /* SMC background-color was transparent */
+	padding-bottom: 20px; 
+	margin-top: 50px;
+	align-self: flex-start; 
+	min-height: 85%;
+}
+
+/*		Link Text		*/
+a{color: #337ab7;}
+a:focus, a:hover, .deleteLink:focus, .deleteLink:hover{color:#23527c;}
+#userMenuList>li>a{color: #fff;}
+#userMenuList>li>a:hover{color: #ddd;}
+
+/*		Login Box Background		*/
+.logonbox{
+		background-color: rgba(255,255,255,.75); /* SMC background-color was transparent */
+		border-radius:10px; 
+		width: 600px; /* SMC. was 400px */
+		padding-left: 15px;  /* SMC added */
+		padding-right: 15px;  /* SMC added */
+} /* 2021-02-04: Ensure long errors do not stretch the error div */
+
+#login{background-color:transparent; width: 100vw;}
+
+/*		Self-Service Dialogue Box Backgrounds		*/
+#popup_OTPResend{background-color: #eee;}
+.popupWin {
+	background-color: rgba(255,255,255,.75); /* SMC background-color was transparent */
+	z-index:1;
+	margin-top: 50px; 
+	width: 600px; /* SMC. was 400px */
+	padding-left: 15px;  /* SMC added */
+	padding-right: 15px;  /* SMC added */
+} /*2021-02-04: Same as above, fixed width */
+/*SMC changed to popupWin width minus padding 600-(15+15)=570 */
+.popFieldsContainer{width: 570px;}	 /* 2021-02-19: For full-width fields on login popups */
+#SSRecoveryActions, #SSEnrollmentAuth { margin-left: 20px; } /* 2021-02-19: Indent SS radio buttons */
+
+/*	Input Fields	*/
+.form-control{border: 1px solid #cbd6e2 !important; border-radius: 28px;}
+.form-control:focus{border-color: #66afe9 !important; box-shadow: inset 0 1px 1px rgba(0,0,0,.1), 0 0 8px rgba(102,175,233,0); -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,0);}
+
+/*		Header Text		*/
+h1,h3 { color: #000;}  /* SMC. removed h2.  H2 defaults to #fff */
+
+/*		Header Background		*/
+.dlghdr{background-color: #004c98;  width: 100%} /* SMC. was Transparent. added width */
+.dlghdr h1, .dlghdr h2 {color: #fff; } /* SMC.  changed to #fff white, was #000 -black */
+
+.loginHdr{background-color:  #004c98; width: 105%} /* SMC. Was transparent added width to 105% to size of container */
+
+/*		Labels & Legends		*/
+label{color: #000;}
+legend, #SSActionChosen>span{color: #000;}
+
+/*		Buttons		*/
+.PGButton {
+	background-color: rgba(0,76,152,0.32); /* SMC was transparent */
+	color: #000;
+	border-radius: 28px;
+    border: 2px solid #003265; /* SMC was #ed2127 */
+	width: 100%; 			/*SMC. added */
+	font-size: 1em;			/* SMC added */
+	margin-top: 10px; 		/* SMC. 2017-02-15 - BS has no margin so these overlap on small screens */
+}
+
+.PGButton:hover, .PGButton:focus {
+	color:#FFF;
+    background-color: #003265; /* SMC was #ed2127 */
+    box-shadow: 0 10px 30px 0 rgba(165,160,160,0.32);
+	border: 2px solid #003265; /* SMC was #ed2127 */
+}
+
+.PGButton:active { position:relative; top: 1px; } /* SMC added*/
+
+.PGButtonDisabled { background-color: transparent; color:#808080; border: 2px solid #808080; }
+.PGButtonDisabled:hover { color:#808080; }
+.PGButtonDisabled:focus { color:#808080; }
+
+.PGAltButton { background-color:#ff8000; }
+.PGAltButton:hover { background-color: #ff9933; color: #fff; }
+
+/*		Errors, Warnings, and Confirmations		*/
+.successdiv { background: #9fc; border: 2px solid #690; color: #000;}
+.warningdiv { background: #9fc; border: 2px solid #0f0; color: #000;}
+.errordiv  { background: #fc9; border: 2px solid #f00; color: #000;}
+.errorfield { background: #fc9; border: 2px solid #f00; }
+
+/*		Link Text for Errors, Warnings, and Confirmations		*/
+.successdiv>a, .warningdiv>a, .errordiv>a { color:#337ab7; }
+
+/*		Input		*/
+.form-control{border: 2px solid #ccc;}
+.form-control:focus{border-color: #66afe9;}
+
+/*		Account Management		*/
+.panel-title>a {color: #000;}
+.panel-heading{background-color:rgba(26,26,29,.02)!important;}
+.activityLabel{color:#000;}
+.panel{background-color: transparent; color:#000;}
+	/* For IE11 */
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { .panel-default>.panel-heading { background-color: #fff; } }
+	/* For MS Edge */
+	@supports (-ms-ime-align:auto) { .panel-default>.panel-heading { background-color: #fff; } }
+	
+#lblLoggedInAs,#lblLoggedInAsMobile{color:#000;}
+#lblLoggedInAsMobile{display: none;}
+
+/*		SSO Tiles		*/
+#ssoSearch{width: 100%; padding-bottom: 0px !important;}
+/*#SAMLSSOTabContent{display: flex; flex-wrap: wrap;justify-content: space-evenly; margin-top: 5px;}*/
+.rpdiv:hover{box-shadow: 0 12px 20px 0 #ed212787;}
+
+/* 2019-01-10 - Removed padding so tiles fit "3 per row" again */
+#SSOContainer{background-color: #fff;color:#FFF;}
+
+/*		Self-Registration Page		*/
+div.container div.displaybox.col-md-8.col-md-offset-2{background-color: #fff;}  /*SMC. was transparent */
+
+/*		Horizontal Rule Spacers for HelpDesk and Admin Dashboard		*/
+hr {border-color: #EEE;}
+
+/*		Help Desk Background		*/
+.HelpDeskActions{background-color: transparent; border-radius: 4px; border: 2px solid #000; padding: 20px;}
+
+/*		Admin Dashboard User Detail Lookup Utility		*/
+#ReportBody{/*background-color: rgba(51,51,51,0.5);*/ border-radius: 4px; border: 2px solid #000; padding: 20px;}
+tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.1);
+}
+#UserProfileData, #NoUserSelected{/*background-color: rgba(51,51,51,0.5);*/ border-radius: 4px; border: 2px solid #000; padding: 20px;}	/*	Uncomment to add transparent background to User Detail Lookup */
+.sectionHeader{color: #000;}
+
+/*	User Menu Text	*/
+.usrMenuBtn{text-align: center;}
+.usrMenuBtn:hover{cursor: pointer;}
+
+#hidden, .hidden{display: none!important;}
+#userMenu{margin-right: 25px;}
+#userMenuList{list-style: none; padding: 10px 0px 10px 0px;}
+#userMenuList li, #userMenuList li a { background-color: transparent; color: #000;}
+#userMenuList li:hover, #userMenuList li a:hover { color: #ed2127;}
+.userMenuItem{padding: 0px 20px 0px 20px; font-size: 1.5em; display: inline-grid; grid-template-columns: 50px auto;}
+.userMenuItem a{color: #fff; text-decoration: none;}
+.userMenuItem a:hover,.userMenuItem a:focus {color: #fff;}
+  
+#menuWrapper{margin-top: 15px;margin-right: 5vw; }
+
+/*	User Menu Popup	*/
+#tippy-1>.tippy-box{background-color: #fff!important; box-shadow: 0px 24px 56px -8px rgba(26,26,29,.16); border-radius: 10px;}
+#tippy-1>.tippy-box>.tippy-arrow{color: #fff!important;}
+.tac{text-align: center!important; background-color: #004c98; } /* SMC Title Change BGColor to Blue */
+.tal{text-align: left!important;}
+.tar{text-align: right!important;}
+.fr{float:right!important;}
+
+/*	Footer	*/
+#footerLogo{/*content:url('/_layouts/images/PG/images/bk.svg');*/ max-height:20px; }
+#copyrightLogoContainer {order: 1; flex: 2; color: red}
+#footerHelp{order: 2; flex: 2;}
+#copyrightTextContainer{order: 3; flex: 2;}
+
+/*		Additional Custom CSS		*/
+#lblForgotUserTitle {background-color: #004c98;}   /* SMC changes Title on Forgot Username form */ 
+#maintitle{display:none;}                          /* SMC suppresses title on SSO panel */ 
+#BrandedLogo{max-height: 50px; margin-top: 7px } /* SMC changes logo size to 150px */ 
+.branded-logo{margin-left: 1vw; } /* SMC changes left margin on logo */ 
+
+.logo-container{
+	background-color: transparent; /* SMC changes logo banner from White to transparent */ 
+	height: 0;                   /* SMC changes logo banner size to 0 */ 
+}
+/*		End Additional Custom CSS		*/
+
+/*	Media Queries	*/
+@media all and (min-width: 320px) {
+	#login{margin-top: 0px;}
+}
+@media all and (max-width: 800px) {
+	.branded-footer{margin-top:25px;}
+}
+@media all and (max-width: 600px) {
+	/*#maintitle{display:none;}*/
+	#searchBarDiv>input{width: 100%;}
+	.deleteLink{float: left!important;padding-right: 0px!important;}
+}
+@media all and (max-width:768px){
+	#copyrightLogoContainer, #footerHelp, #copyrightTextContainer{flex:7 1 100%;}
+	/*.opaque{margin-top:50px;}*/
+	#menuWrapper{margin-right: 2.5vw;}
+	#lblLoggedInAs{display: none;}
+	#lblLoggedInAsMobile{display: inline-block;}
+	
+	/* 2021-02-16: Don't apply the larger width to mobile */
+	.logonbox{background-color: rgba(255,255,255,0.8); border-radius:10px; width: 330px;} /* SMC bg-color was transparent */
+	.popupWin { background-color: rgba(255,255,255,0.8); 
+                    z-index:1; 
+                    margin-top: 0px; 
+                    width: 330px; 
+                    padding-left: 5px; 
+                    padding-right: 5px; 
+                  } /* SMC bg-color was transparent -Added padding left and right */
+	.secondaryWrapper{width: 330px;}
+	.popFieldsContainer{width: 320px;}	/* SMC chaged 320px - 2021-02-19: So fields on mobile use full width */
+}
+
+li[aria-expanded=true] { pointer-events: none; }
+#ssoGroupCreationHelp { margin-bottom: 0; }
+.ssoGroupName { min-width: 200px; }
